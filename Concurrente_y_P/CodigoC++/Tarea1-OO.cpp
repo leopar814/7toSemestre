@@ -29,7 +29,7 @@ int main() {
     vector<palabra*> obj [cadena.size()];
 
     for(int i = 0; i < cadena.size(); i++) {
-        obj[i] =new palabra(cadena[i]);
+        obj[i] = new palabra(cadena[i]);
     }
 
     for(int i = 0; i < cadena.size(); i++) {
