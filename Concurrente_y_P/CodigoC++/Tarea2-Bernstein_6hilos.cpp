@@ -23,11 +23,12 @@ int main(){
     vector<thread*> hilos(6);
     int i;
 
-    hilos[0] = new thread(llenarArreglo, 3, nullptr); //el primer hilo de A[impar] no tiene que esperar a nadie
-    hilos[1] = new thread(llenarArreglo, 4, nullptr); //el primer hilo A[par] no tiene que esperar a nadie
+    hilos[0] = new thread(llenarArreglo, 3, nullptr); //el hilo con A[3] no tiene que esperar a nadie
+    hilos[1] = new thread(llenarArreglo, 4, nullptr); //el hilo A[4] no tiene que esperar a nadie
 
-    for(i = 5; i < 9; i++) 
-        hilos[i-3] = new thread(llenarArreglo, i, hilos[i-5]);
+    // c/ hilo siguiente depende del hilo 2 posiciones atrás
+    for(i = 2; i < 6; i++) 
+        hilos[i] = new thread(llenarArreglo, i+3, hilos[i-2]);
         
     hilos[4]->join();
     hilos[5]->join(); //main espera a que terminen los últimos hilos (par e impar)
