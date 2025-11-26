@@ -1,6 +1,4 @@
-
 import Jpmi.*;
-
 public class Suc implements Proceso {
     CanalSimple canalIn, canalOut;
     Integer numero;
@@ -10,7 +8,7 @@ public class Suc implements Proceso {
         this.canalOut=canalOut;
         numero=null;
     }
-    
+    @Override
     public void run(){
         while(true){
             numero=(Integer)canalIn.receive();

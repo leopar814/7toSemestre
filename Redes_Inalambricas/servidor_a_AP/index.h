@@ -1,7 +1,5 @@
 // HTML completo que se guardará en SPIFFS
 
-
-
 String htmlPage() {
   String page = R"rawliteral(
 

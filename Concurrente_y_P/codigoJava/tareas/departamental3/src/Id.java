@@ -1,4 +1,3 @@
-
 import Jpmi.*;
 public class Id implements Proceso{
     CanalSimple canalIn, canalOut;

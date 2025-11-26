@@ -1,5 +1,4 @@
 import Jpmi.*;
-
 public class Escribe implements Proceso {
     CanalSimple canalOut;
     Object dato;

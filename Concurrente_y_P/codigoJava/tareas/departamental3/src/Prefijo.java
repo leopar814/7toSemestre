@@ -1,6 +1,4 @@
-
 import Jpmi.*;
-
 public class Prefijo implements Proceso{
     CanalSimple canalIn, canalOut;
     Integer numero;
@@ -10,7 +8,7 @@ public class Prefijo implements Proceso{
         this.canalIn=canalIn;
         this.canalOut=canalOut;
     }
-    
+    @Override
     public void run(){
         canalOut.send(numero);
         Id id=new Id(canalIn, canalOut);
